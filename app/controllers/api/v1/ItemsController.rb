@@ -15,7 +15,7 @@ module Api
         if item.save
           render json: ItemSerializer.new(item).serialized_json
         else
-          render json: {error: item.errors.messages}, status: 422
+          render json: {error: item.errors.messages}, state: 422
         end
       end
 
@@ -25,7 +25,7 @@ module Api
         if item.update(item_params)
           render json: ItemSerializer.new(item).serialized_json
         else
-          render json: {error: item.errors.messages}, status: 422
+          render json: {error: item.errors.messages}, state: 422
         end
       end
 
@@ -35,14 +35,14 @@ module Api
         if item.destroy
           head :no_content
         else
-          render json: {error: item.errors.messages}, status: 422
+          render json: {error: item.errors.messages}, state: 422
         end
       end
 
       private
 
       def item_params
-        params.require(:item).permit(:title, :status)
+        params.require(:item).permit(:name, :state)
       end
     end
   end

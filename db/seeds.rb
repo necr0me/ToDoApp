@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Item.create(title: "Task1", status: "progress")
-Item.create(title: "Task2", status: "removed")
-Item.create(title: "Task3", status: "completed")
-Item.create(title: "Task4", status: "progress")
-Item.create(title: "Task5", status: "progress")
-Item.create(title: "Task6", status: "completed")
+Item.create(name: "Task1", state: "progress")
+Item.create(name: "Task2", state: "removed")
+Item.create(name: "Task3", state: "completed")
+Item.create(name: "Task4", state: "progress")
+Item.create(name: "Task5", state: "progress")
+Item.create(name: "Task6", state: "completed")
 

@@ -19,6 +19,16 @@ module Api
         end
       end
 
+      def update
+        item = Item.find(params[:id])
+
+        if item.update(item_params)
+          render json: ItemSerializer.new(item).serialized_json
+        else
+          render json: {error: item.errors.messages}, status: 422
+        end
+      end
+
       def destroy
         item = Item.find(params[:id])
 
